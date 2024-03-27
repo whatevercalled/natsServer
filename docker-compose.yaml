@@ -22,3 +22,15 @@ services:
       - type: bind
         source: $PWD/nats-server.conf # 本地資料夾配置檔位置
         target: /nats-server.conf # 容器中配置檔的位置
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+volumes:
+  mongodb_data_container:
