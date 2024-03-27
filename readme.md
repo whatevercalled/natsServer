@@ -5,3 +5,4 @@ docker compose up -d
 ```
 sudo docker run nats:2.6.1 -js
 ```
+# 請安裝 mac os 環境的 mongodb compass
